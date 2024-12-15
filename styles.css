@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+
+/*Paars #5722CD;*/
+/*Blauw #4845E4;*/
+/*Roze #ED4385;*/
+/*Zwart #0C0C0C (voor standaard tekst);*/
+/*Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services") Uitzonderingen:*/
+/*                                                                                 Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)*/
+/*Grijs #7A7A7A (voor de service-tegel tekst);*/
+
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+:root{
+    --paars: #5722CD;
+    --blauw: #4845E4;
+    --lichtpaars: #F2F0FF;
+    --lichtgrijs: #F3F6F9;
+    --roze: #ED4385;
+    --zwart: #0C0C0C;
+    --grijs: #7A7A7A;
+
+}
+*{  /*reset css*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+*{
+    font-family: roboto,sans-serif;
+    font-style: normal;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Merriweather', serif;
+}
+h1{
+    font-size:2.4rem;
+}
+.small-weight-p{
+    font-weight: 300;
+}
+a{
+    text-decoration: none;
+    color: var(--paars);
+}
+a:hover{
+    color: rgba(87, 34, 205, 0.7);
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+/* Header {Nav, Hero}*/
+header {
+    width: 101%;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 80px;
+    margin-top: 25px;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
+nav ul li a:hover{
+    color: rgba(255, 255, 255, 0.7);
+}
+nav ul li a:visited{
+    color: white;
+}
+
+header h1,header p{
+    color: white;
+    margin-bottom: 30px;
+}
+header p{
+    font-size: 1.6rem;
+}
+header div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    text-align: center;
+}
+header img{
+    justify-self: center;
+    margin-top: 120px;
+}
+/*Main */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 101%;
+}
+/*introdution section */
+
+
+.section-intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-intro div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-intro div h2{
+    text-align: center;
+    color: var(--paars);
+    padding-bottom: 30px;
+}
+.section-intro div p{
+    padding-top: 70px;
+}
+/*info-blocks section */
+.section-info-blocks{
+    position: relative;
+    background-color: var(--lichtgrijs);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 180px 20px 60px 20px;
+    z-index: 0;
+
+}
+.info-block{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
+
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+
+}
+.info-block:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.section-info-blocks div article div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 300px;
+    height: 240px;
+    margin: 0 20px;
+}
+.section-info-blocks div article div a{
+    font-weight: bold;
+    letter-spacing: 4px;
+    position: relative;
+}
+.section-info-blocks div article div a:hover{
+    color: var(--paars);
+    cursor: pointer;
+}
+.section-info-blocks div article div a::after{
+    content: "";
+    display: block;
+    margin-left: 169px;
+    margin-top: -11px;
+    width: 10%;
+    height: 2px;
+    background-color: var(--paars);
+    transition: width ease-in-out 0.3s;
+}
+.section-info-blocks div article div a:hover::after{
+    width: 40%;
+
+}
+.image-wrapper {
+    flex-basis: 550px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+.section-info-blocks div article span img{
+    width: 100%;
+    box-shadow: 0px 10px 15px rgba(110, 110, 110, 0.3);
+}
+/*info-squares section */
+.section-info-squares{
+    padding: 220px 20px 80px 20px;
+}
+.section-info-squares div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px 25px;
+}
+
+.info-square{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 320px;
+    height: 300px;
+    border: 2px solid var(--paars);
+    padding: 15px 30px 30px 30px;
+    box-shadow: 0 10px 15px rgba(110, 110, 110, 0.2);
+    background-color: white;
+}
+.info-square img{
+    width: 60px;
+}
+.info-square h3{
+    color: var(--paars);
+    font-size: 1.3rem;
+}
+.info-square p{
+    font-size: 0.85rem;
+    color: #939393;
+}
+
+/*Contact form */
+
+#section-contact-form{
+    width: 101%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+#section-contact-form div{
+    padding-top: 40px;
+
+}
+#section-contact-form div h1, #section-contact-form div p{
+    color: white;
+    text-align: center;
+    padding-bottom: 25px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 700px;
+}
+
+form label{
+    color: white;
+    font-weight: bold;
+}
+form input{
+    padding: 16px 20px;
+    margin-bottom: 30px;
+    align-self: stretch;
+    border-radius: 5px;
+    border: none;
+}
+form textarea{
+    padding: 18px 20px;
+    margin-bottom: 30px;
+    height: 300px;
+    align-self: stretch;
+    resize: none;
+    border-radius: 5px;
+}
+form button{
+    align-self: center;
+    padding:  24px 60px;
+}
+
+/*Footer */
+
+footer{
+    width: 101%;
+    padding: 30px 20px;
+    background: var(--zwart);
+    text-align: center;
+}
+footer p{
+    color: white;
+}
+
+
+/* --------------- 3.1 Reusables ----------------------- */
+.outer-container-purple{
+    background: var(--paars);
+    background: linear-gradient(313deg, var(--paars) 0%, var(--blauw) 100%);
+}
+
+.inner-container-short{
+    max-width: 700px;
+}
+
+.inner-container-long{
+    max-width: 1010px;
+}
+
+button{
+    background-color: var(--roze);
+    font-size: 1rem;
+    color: white;
+    border: none;
+    font-weight: 400;
+    padding: 24px 40px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+    transition: 0.4s;
+}
+button:hover{
+    background-color: rgba(237, 67, 133, 0.9);
+}
+
+
+/* --------------- 3.2 Other --------------------------- */
+
+.seprator{
+    width: 0;
+    height: 0;
+    border-right: 101vw solid transparent;
+    border-bottom: 40px solid white;
+    margin-top: -95px;
+    margin-left: -1px;
+}
+
+#grey-background{
+    border-bottom: 40px solid var(--lichtgrijs);
+}
+#sep-block-square{
+        width: 0;
+        height: 0;
+        border-right: 101vw solid transparent;
+        border-bottom: 40px solid white;
+        margin-top: -40px;
+        margin-left: -1px;
+    z-index: 0;
+    }
+
+.seprator-reverse{
+    width: 0;
+    height: 0;
+    border-left: 101vw solid transparent;
+    border-top: 40px solid #ffffff;
+    margin-top: -50px;
+}
+#bg-hello{
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    font-size: 25rem;
+    color: var(--lichtpaars);
+    margin-top: -140px;
+    margin-left: -91px;
+    letter-spacing: -13px;
+    z-index: -1;
+}
+#bg-services{
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    font-size: 15rem;
+    color: var(--lichtpaars);
+    margin-top: -206px;
+    margin-left: 48px;
+    z-index: -1;
+    padding: 0 20px;
+
+}
+#bg-work {
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    font-size: 25rem;
+    color: white;
+    margin-top: -230px;
+    margin-left: 30px;
+    letter-spacing: -3px;
+    z-index: -1;
+    padding: 0 20px;
+
+}
+
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media only screen and (max-width: 620px) {
+    h1{
+        font-size: 2rem;
+        padding: 0 ;
+    }
+    nav {
+        justify-content: center;
+        margin-right: 0;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    nav ul li a{
+        font-weight: bold;
+    }
+    header button{
+        margin-bottom: 40px;
+    }
+     .seprator #grey-background{
+         margin-top: -60px;
+         border-bottom: 40px solid white;
+     }
+    header{
+        height: 600px;
+    }
+    header img{
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+    .outer-container-purple{
+        width: 104%;
+    }
+
+    .inner-container-short{
+        max-width: 420px;
+    }
+    .inner-container-long{
+        max-width: 420px;
+    }
+    #bg-services{
+        font-size: 6.5rem;
+        letter-spacing: -4px;
+        margin-left: 0px;
+        margin-top: -90px;
+        margin-right: 0px;
+        overflow: hidden;
+    }
+    #bg-hello{
+        font-size: 12rem;
+        margin-left: 30px;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0px;
+        text-align: center;
+        position: absolute;
+        padding-bottom: 440px;
+    }
+    .section-intro{
+        padding: 150px 20px;
+    }
+    #bg-work{
+        font-size: 10rem;
+        letter-spacing: -4px;
+        margin-right: -20px;
+        margin-left: -20px;
+        margin-top: -120px;
+    }
+ .info-block{
+     flex-direction: column-reverse;
+ }
+ .info-block:nth-child(even){
+     flex-direction: column-reverse;
+ }
+ .image-wrapper{
+     flex-basis: auto;
+ }
+ .info-block{
+     justify-content: center;
+     margin-bottom: 80px;
+ }
+ .section-info-blocks div article div{
+     height: 220px;
+     max-width: 400px;
+     margin: 30px 0;
+ }
+ .section-info-blocks{
+     width: 101%;
+ }
+ #section-contact-form{
+     width: 101%;
+ }
+ footer{
+     width: 101%;
+ }
+}
